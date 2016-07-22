@@ -1,0 +1,15 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+  <h1>New Menu Item for: {{restaurant.name}}</h1>
+  <form method="POST" action="{{url_for('newMenuItem', restaurant_id=restaurant.id)}}">
+    <p><input name="name" type="text" placeholder="Menu Item Name"></p>
+    <p><input name="description" type="text" placeholder="Description"></p>
+    <p><input name="price" type="text" placeholder="Price"></p>
+    <p><input name="course" type="text" placeholder="Course"></p>
+    <p><input type="submit" value="Submit"></p>
+  </form>
+</body>
+</html>
