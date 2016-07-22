@@ -17,7 +17,9 @@ Mac][1].
 Check out this repository and then, from the root of the repository, build an
 image using the following command:
 
-`docker build -t **tagn** .`
+`docker build -t [tag] .`
+
+*Replace "[tag]" with your desired [image tag][2]*
 
 This will create an image from the "official" Python Docker Hub repository,
 create a directory to hold the app's files, and install any needed dependencies.
@@ -26,7 +28,7 @@ create a directory to hold the app's files, and install any needed dependencies.
 
 Use the following command to start a container to work in:
 
-`docker run -d -v --rm "$(pwd)":/app -p5000:5000 **tag** python /app/project.py`
+`docker run -d -v --rm "$(pwd)":/app -p5000:5000 [tag] python /app/project.py`
 
 This container will link the current directory (the repository root) to the
 container and start the app `project.py`. The app will be accessible at the URL:
@@ -34,3 +36,4 @@ container and start the app `project.py`. The app will be accessible at the URL:
 http://localhost:5000
 
 [1]:https://docs.docker.com/docker-for-mac/
+[2]:https://docs.docker.com/engine/reference/commandline/tag/
