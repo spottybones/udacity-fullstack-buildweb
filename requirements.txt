@@ -1,0 +1,9 @@
+bleach
+oauth2client
+requests
+httplib2
+redis
+passlib
+itsdangerous
+flask-httpauth
+sqlalchemy

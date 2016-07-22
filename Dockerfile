@@ -1,10 +1,7 @@
-FROM google/python
-
-WORKDIR app
-RUN virtualenv /env
-ADD requirements.txt /app/requirements.txt
-RUN /env/bin/pip install -r requirements.txt
-ADD . /app
-
-CMD []
-ENTRYPOINT ["/env/bin/python", "/app/project.py"]
+FROM python:2.7
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /app
+WORKDIR /app
+ADD requirements.txt /app/
+RUN pip install -r requirements.txt
+ADD . /app/
