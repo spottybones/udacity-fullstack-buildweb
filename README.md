@@ -28,12 +28,16 @@ create a directory to hold the app's files, and install any needed dependencies.
 
 Use the following command to start a container to work in:
 
-`docker run -d -v --rm "$(pwd)":/app -p5000:5000 [tag] python /app/project.py`
+`docker run --rm -v "$(pwd)":/app -p5000:5000 [tag] python /app/project.py`
 
 This container will link the current directory (the repository root) to the
-container and start the app `project.py`. The app will be accessible at the URL:
+container and start the app `project.py`. The container will run and display
+logging output until ^C is pressed to stop it. The app will be accessible at the
+URL:
 
 http://localhost:5000
+
+while the container is running.
 
 [1]:https://docs.docker.com/docker-for-mac/
 [2]:https://docs.docker.com/engine/reference/commandline/tag/
